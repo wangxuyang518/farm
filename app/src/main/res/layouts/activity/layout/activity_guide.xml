@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="@dimen/guide_bt_width"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_height="@dimen/guide_bt_width" />
+            <Button
+                android:text="我是卖家"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:background="@drawable/guide_bt"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/image1"
+                android:layout_alignRight="@id/image1"
+                android:layout_alignLeft="@id/image1"
+                android:layout_width="@dimen/guide_bt_width"
+                android:layout_height="40dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content"
+        tools:ignore="Suspicious0dp">
+        <View
+            android:background="@color/divide_line"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_height="0.8dp"/>
+        <TextView
+            android:textSize="16dp"
+            android:textColor="@color/divide_line"
+            android:text="   或者   "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="@color/divide_line"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="0.8dp"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="@dimen/guide_bt_width"
+                android:layout_height="@dimen/guide_bt_width"
+                android:src="@mipmap/ic_launcher_round" />
+            <Button
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/image2"
+                android:layout_alignRight="@id/image2"
+                android:textSize="17dp"
+                android:text="我是买家"
+                android:textColor="@color/white"
+                android:background="@drawable/guide_bt"
+                android:layout_alignLeft="@id/image2"
+                android:layout_width="@dimen/guide_bt_width"
+                android:layout_height="40dp"  />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
