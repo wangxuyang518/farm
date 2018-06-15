@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'  //kapt3插件
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -20,16 +19,39 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/activity',
+                            'src/main/res/layouts/fragment',
+                            'src/main/res/layouts/item',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.android.support:support-vector-drawable:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'com.android.support:design:27.1.1'
+        implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+        implementation 'com.android.support:support-vector-drawable:27.1.1'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+        api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+        api rootProject.ext.dependencies["okrx"]
+        api rootProject.ext.dependencies["rxandroid"]
+        api rootProject.ext.dependencies["fastjson"]
+        api rootProject.ext.dependencies["glide"]
+        api rootProject.ext.dependencies["banner"]
+        api 'com.google.dagger:dagger:2.12'
+        kapt "com.google.dagger:dagger-compiler:2.12"
+        api 'com.android.support:design:27.1.1'
+        api 'com.google.dagger:dagger-android-support:2.12'
+    }
+
 }

@@ -1,15 +1,14 @@
-package project.farm
+package project.login
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.support.design.internal.BottomNavigationItemView
+import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-
-import android.support.design.internal.BottomNavigationItemView
-
-import android.support.design.internal.BottomNavigationMenuView
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_main.*
+import project.farm.R
 
 
 class MainActivity : AppCompatActivity() {
