@@ -1,6 +1,7 @@
 package project.mvp.application
 
 import android.app.Application
+import com.blankj.utilcode.util.Utils
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.cache.CacheEntity
 import com.lzy.okgo.cache.CacheMode
@@ -20,6 +21,7 @@ public class FarmApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         mFarmApplication = this
+        Utils.init(this)
         initDagger2()
         initOkgo()
     }

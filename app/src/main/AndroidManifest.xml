@@ -11,14 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="project.login.GuideActivity"
-            android:theme="@style/SplashTheme"
-            android:label="@string/app_name">
+            android:name="project.login.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="project.login.LoginPassWordActivity" />
+        <activity android:name="project.login.RegisterActivity" />
+        <activity android:name="project.login.GuideActivity" />
+        <activity android:name="project.login.LoginMessageActivity" />
+        <activity android:name="project.login.MainActivity" />
+        <activity android:name="project.login.FindPassWordActivity"/>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@
                 android:src="@mipmap/ic_launcher_round"
                 android:layout_height="@dimen/guide_bt_width" />
             <Button
+                android:id="@+id/btSeller"
                 android:text="我是卖家"
                 android:textColor="@color/white"
                 android:textSize="17dp"
@@ -72,6 +73,7 @@
                 android:layout_height="@dimen/guide_bt_width"
                 android:src="@mipmap/ic_launcher_round" />
             <Button
+                android:id="@+id/btBuyer"
                 android:layout_marginTop="15dp"
                 android:layout_below="@id/image2"
                 android:layout_alignRight="@id/image2"

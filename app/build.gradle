@@ -43,7 +43,8 @@ android {
         androidTestImplementation 'com.android.support.test:runner:1.0.2'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
         api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
-        api rootProject.ext.dependencies["okrx"]
+        api rootProject.ext.dependencies["rxjava"]
+        api rootProject.ext.dependencies["okgo"]
         api rootProject.ext.dependencies["rxandroid"]
         api rootProject.ext.dependencies["fastjson"]
         api rootProject.ext.dependencies["glide"]
@@ -52,6 +53,7 @@ android {
         kapt "com.google.dagger:dagger-compiler:2.12"
         api 'com.android.support:design:27.1.1'
         api 'com.google.dagger:dagger-android-support:2.12'
+        implementation 'com.blankj:utilcode:1.17.0'
     }
 
 }
