@@ -7,14 +7,14 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/mtoolBar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="45dp"
         android:layout_gravity="center_vertical"
-        android:background="#FF46CC97"
+        android:background="#08da87"
         android:theme="@style/toolbar_theme"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
         app:navigationIcon="@mipmap/icon_back"
-        app:titleTextColor="@color/white">
+        app:titleTextColor="#ffffff">
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -22,6 +22,6 @@
             android:layout_gravity="center_horizontal"
             android:text=""
             android:textColor="#ffffff"
-            android:textSize="18sp" />
+            android:textSize="18dp" />
     </android.support.v7.widget.Toolbar>
 </android.support.constraint.ConstraintLayout>

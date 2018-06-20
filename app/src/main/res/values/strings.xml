@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">farm</string>
+    <string name="app_name">农场</string>
     <string name="title_home">主页</string>
     <string name="title_dashboard">发布</string>
     <string name="title_notifications">订单</string>

@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name="project.login.LoginPassWordActivity" />
-        <activity android:name="project.login.RegisterActivity" />
+        <activity android:name="project.login.RegisterActivity"/>
         <activity android:name="project.login.GuideActivity" />
         <activity android:name="project.login.LoginMessageActivity" />
         <activity android:name="project.login.MainActivity" />

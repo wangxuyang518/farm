@@ -20,8 +20,6 @@ import xinyi.com.appmanager.di.scope.ActivityScope
 @Component(dependencies = arrayOf(ApplicationComponent::class), modules = arrayOf(ActivityModule::class))
 interface ActivityComponent {
     val activity: BaseMvpActivity<*>
-
-
     fun inject(login: LoginMessageActivity);
     fun inject(register: RegisterActivity);
     fun inject(login: LoginPassWordActivity);

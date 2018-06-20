@@ -4,14 +4,22 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="guide_bt_width">120dp</dimen>
     <dimen name="login_height">42dp</dimen>
-    <dimen name="login_layout_marginLeft">35dp</dimen>
-    <dimen name="login_layout_marginTop">25dp</dimen>
+    <dimen name="login_layout_marginLeft">25dp</dimen>
+    <dimen name="login_layout_marginTop">30dp</dimen>
+    <dimen name="login_layout_marginTop20">20dp</dimen>
+    <dimen name="login_layout_marginTop25">25dp</dimen>
     <dimen name="login_paddingBottom">5dp</dimen>
-    <dimen name="login_paddingLeft">10dp</dimen>
-    <dimen name="login_paddingRight">10dp</dimen>
-    <dimen name="login_paddingTop">3dp</dimen>
+    <dimen name="login_paddingTop">20dp</dimen>
     <dimen name="login_image_width">40dp</dimen>
-    <dimen name="login_line_height">0.8dp</dimen>
+    <dimen name="login_line_height">1dp</dimen>
     <dimen name="login_layout_marginBottom">5dp</dimen>
     <dimen name="login_layout_marginTop8dp">8dp</dimen>
+    <dimen name="login_message_size">13dp</dimen>
+    <dimen name="login_input_size">16dp</dimen>
+    <dimen name="login_bt_size">17dp</dimen>
+    <dimen name="login_bt_width">45dp</dimen>
+    <dimen name="login_icon_width">20dp</dimen>
+    <dimen name="login_icon_height">30dp</dimen>
+
+
 </resources>

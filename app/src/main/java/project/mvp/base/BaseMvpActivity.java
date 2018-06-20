@@ -3,7 +3,6 @@ package project.mvp.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-
 import javax.inject.Inject;
 
 import project.mvp.application.FarmApplication;
@@ -23,10 +22,10 @@ public abstract class BaseMvpActivity<T extends RxPresenter> extends BaseActivit
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         inject();
         if (mPresenter != null)
             mPresenter.attachView(this);
+        super.onCreate(savedInstanceState);
     }
 
     public ActivityComponent getDaggerActivityComponent() {
