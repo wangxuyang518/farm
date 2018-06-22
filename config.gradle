@@ -27,7 +27,7 @@ ext {
             "stateLayout"                  : "com.github.xinyitech:stateLayout:1.0.4",
             "material-dialogs"             : "com.github.xinyitech:material-dialogs:v0.9.7.0",
             "BaseRecyclerViewAdapterHelper": "com.github.xinyitech:BaseRecyclerViewAdapterHelper:2.9.35",
-            "okgo"                         : "com.github.xinyitech.okhttp-OkGo:okgo:v3.0.4",
+            "okgo"                         : "com.lzy.net:okgo:3.0.4",
             "annotationProcessor"          : "com.jakewharton:butterknife-compiler:8.5.1",
             //base
             "appcompat-v7"                 : "com.android.support:appcompat-v7:${dependVersion.support}",

@@ -1,5 +1,6 @@
 package project.login
 
+import android.graphics.Color
 import com.blankj.utilcode.util.ActivityUtils
 import kotlinx.android.synthetic.main.activity_login.*
 import project.farm.R
@@ -13,7 +14,7 @@ public class LoginMessageActivity : BaseMvpActivity<LoginPresenter>(){
     }
 
     override fun getLayoutResource(): Int {
-        setStateBar()
+        setStateBar(Color.TRANSPARENT)
         return R.layout.activity_login
     }
 

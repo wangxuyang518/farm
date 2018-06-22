@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">农场</string>
     <string name="title_home">主页</string>
-    <string name="title_dashboard">发布</string>
+    <string name="title_dashboard">购物车</string>
     <string name="title_notifications">订单</string>
     <string name="title_me">我的</string>
 </resources>

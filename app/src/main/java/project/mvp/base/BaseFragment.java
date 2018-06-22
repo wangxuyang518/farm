@@ -10,11 +10,18 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
 
+    public View mRootView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflaterView();
+
+        mRootView = inflaterView();
+        initView();
+        return mRootView;
     }
+
+    public abstract void initView();
 
     public abstract View inflaterView();
 }

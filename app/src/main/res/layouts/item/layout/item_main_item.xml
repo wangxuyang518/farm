@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/ivItem"
+        android:src="@mipmap/main_item1"
+        android:layout_width="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/tvName"
+        android:textSize="15dp"
+        android:layout_marginTop="4dp"
+        android:text="瓜果"
+        android:layout_below="@id/ivItem"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

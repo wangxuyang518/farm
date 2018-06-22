@@ -5,13 +5,17 @@ import project.farm.R
 import project.login.presenter.LoginPresenter
 import project.mvp.base.BaseMvpFragment
 
-public class PublishFragment : BaseMvpFragment<LoginPresenter>(){
+public class CarFragment : BaseMvpFragment<LoginPresenter>(){
+    override fun initView() {
+
+    }
+
     override fun inject() {
         getDaggerFragmentComponent().inject(this)
     }
 
     override fun inflaterView(): View {
-        return View.inflate(activity, R.layout.fragment_publish,null)
+        return View.inflate(activity, R.layout.fragment_car,null)
     }
 
 }

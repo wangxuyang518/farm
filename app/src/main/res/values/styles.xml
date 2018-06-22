@@ -18,8 +18,9 @@
       <!--  <item name="colorControlNormal">@color/white</item>-->
         <item name="contentInsetStart">0dp</item>
     </style>
-    <style name="Login_theme" parent="Theme.AppCompat.Light.NoActionBar">
-
-
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16dp</item>
     </style>
+  
+
 </resources>

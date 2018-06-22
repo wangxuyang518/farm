@@ -17,13 +17,13 @@ public abstract class BaseMvpFragment <T extends RxPresenter>extends BaseFragmen
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         inject();
+        super.onCreate(savedInstanceState);
         if (mPresenter != null)
             mPresenter.attachView(this);
+
     }
     public abstract void inject();
-
     public FragmentComponent getDaggerFragmentComponent() {
         return DaggerFragmentComponent.builder()
                 .applicationComponent(FarmApplication.mFarmApplication.mApplicationComponent)

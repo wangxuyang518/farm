@@ -1,6 +1,7 @@
 package project.login.presenter
 
 import android.widget.TextView
+import com.alibaba.fastjson.TypeReference
 import com.jakewharton.rxbinding2.view.RxView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -8,6 +9,8 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import project.mvp.base.IBaseView
 import project.mvp.base.RxPresenter
+import project.mvp.http.Api
+import project.mvp.repertory.BaseRepertory
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -16,7 +19,7 @@ import javax.inject.Inject
  */
 public class LoginPresenter @Inject constructor() : RxPresenter<IBaseView>() {
 
-    private  var mDisable: Disposable? = null
+    private var mDisable: Disposable? = null
 
     //倒计时
     public fun countdown(tvMessage: TextView) {
@@ -25,7 +28,7 @@ public class LoginPresenter @Inject constructor() : RxPresenter<IBaseView>() {
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     tvMessage.isClickable = false
-                    mDisable= Observable
+                    mDisable = Observable
                             .interval(1, TimeUnit.SECONDS)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
@@ -40,5 +43,20 @@ public class LoginPresenter @Inject constructor() : RxPresenter<IBaseView>() {
                             }
                     addSubscribe(mDisable)
                 })
+    }
+
+
+    public fun getData() {
+        var s = HashMap<String, Any>();
+        s.put("userCode", "123")
+        s.put("passWord ", "123")
+        s.put("requestToken", "1231231231231212312312123")
+        BaseRepertory.okgoPost(encode(s),Api.loginUrl, object : TypeReference<String>() {})
+              /*  .compose(ComposeUtils.ComposeUtil(mView))
+                .subscribe {
+
+                }*/
+
+
     }
 }

@@ -2,34 +2,50 @@ package project.login
 
 
 import android.annotation.SuppressLint
-import android.os.Bundle
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.support.design.internal.BottomNavigationItemView
 import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentTransaction
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.ToastUtils
 import kotlinx.android.synthetic.main.activity_main.*
+import project.buyer.ui.fragment.CarFragment
 import project.buyer.ui.fragment.HomeFragment
 import project.buyer.ui.fragment.MineFragment
 import project.buyer.ui.fragment.OrderFragment
-import project.buyer.ui.fragment.PublishFragment
 import project.farm.R
+import project.mvp.base.BaseActivity
 
 
+class MainActivity : BaseActivity() {
 
 
+    override fun initView() {
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        BottomNavigationViewHelper.disableShiftMode(navigation);
 
+        mFragmentTransaction = supportFragmentManager.beginTransaction()
+        mFragmentTransaction.add(R.id.mFrameLayout, HomeFragment(), "home")
+        mFragmentTransaction.commit()
 
-class MainActivity : AppCompatActivity() {
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    override fun getLayoutResource(): Int {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            window.statusBarColor = resources.getColor(R.color.colorAccent)
+        }
+        return R.layout.activity_main
+    }
 
     private lateinit var mFragmentTransaction: FragmentTransaction
-    private var firstPressedTime=0L
+    private var firstPressedTime = 0L
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        mFragmentTransaction=supportFragmentManager.beginTransaction()
+        mFragmentTransaction = supportFragmentManager.beginTransaction()
         when (item.itemId) {
             R.id.navigation_home -> {
                 mFragmentTransaction.replace(R.id.mFrameLayout, HomeFragment(), "home")
@@ -37,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_publish -> {
-                mFragmentTransaction.replace(R.id.mFrameLayout, PublishFragment(), "pulish")
+                mFragmentTransaction.replace(R.id.mFrameLayout, CarFragment(), "pulish")
                 mFragmentTransaction.commit()
                 return@OnNavigationItemSelectedListener true
             }
@@ -53,18 +69,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         false
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        BottomNavigationViewHelper.disableShiftMode(navigation);
-
-        mFragmentTransaction = supportFragmentManager.beginTransaction()
-        mFragmentTransaction.add(R.id.mFrameLayout, HomeFragment(), "home")
-        mFragmentTransaction.commit()
-
     }
 
     override fun onBackPressed() {

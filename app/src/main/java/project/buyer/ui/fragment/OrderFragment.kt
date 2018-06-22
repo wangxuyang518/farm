@@ -6,6 +6,10 @@ import project.login.presenter.LoginPresenter
 import project.mvp.base.BaseMvpFragment
 
 public class OrderFragment : BaseMvpFragment<LoginPresenter>(){
+    override fun initView() {
+
+    }
+
     override fun inject() {
         getDaggerFragmentComponent().inject(this)
     }

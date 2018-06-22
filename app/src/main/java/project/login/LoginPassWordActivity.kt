@@ -1,5 +1,6 @@
 package project.login
 
+import android.graphics.Color
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.StringUtils
 import com.blankj.utilcode.util.ToastUtils
@@ -27,14 +28,15 @@ public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(), ICheckDa
     }
 
     override fun getLayoutResource(): Int {
-        setStateBar()
+        setStateBar(Color.TRANSPARENT)
         return R.layout.activity_login_password
     }
 
     override fun initView() {
         etPhoneNumber.requestFocus()
         btLogin.setOnClickListener {
-            ActivityUtils.startActivity(MainActivity::class.java)
+           // ActivityUtils.startActivity(MainActivity::class.java)
+            mPresenter.getData()
         }
         tvRegister.setOnClickListener {
             ActivityUtils.startActivity(RegisterActivity::class.java)

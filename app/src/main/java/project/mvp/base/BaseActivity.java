@@ -1,7 +1,6 @@
 package project.mvp.base;
 
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,8 +10,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-
-import project.farm.R;
 
 /**
  * Created by jiajun.wang on 2018/3/19.
@@ -31,15 +28,13 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(getLayoutResource());
-        toolBar=findViewById(R.id.mtoolBar);
+
         initView();
     }
     public void initToolBar(String title){
         setSupportActionBar(toolBar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        TextView tvTitle=toolBar.findViewById(R.id.tvTitle);
-        tvTitle.setText(title);
         toolBar.setTitle("");
         setSupportActionBar(toolBar);
         toolBar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -85,7 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     }
 
 
-    public void setStateBar(){
+    public void setStateBar(int color){
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -95,8 +90,8 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
-            window.setNavigationBarColor(Color.TRANSPARENT);
+            window.setStatusBarColor(color);
+            window.setNavigationBarColor(color);
         }
     }
 }
