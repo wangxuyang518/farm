@@ -18,6 +18,9 @@ import project.mvp.base.BaseMvpFragment
 
 
 public class HomeFragment : BaseMvpFragment<HomePresenter>() {
+    override fun handleException(throwable: Throwable?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     public lateinit var mMainItemAdapter: MainItemAdapter //item的adapter
     public lateinit var mMainPagerAdapter: MainPagerAdapter  //viewpager的adapter

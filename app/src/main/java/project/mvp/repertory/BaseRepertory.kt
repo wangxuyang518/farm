@@ -14,9 +14,9 @@ public class BaseRepertory {
      * okgo网络请求的二次封装
      */
     companion object {
-        public fun <T> okgoPost(params: String, url: String, t: TypeReference<T>): Observable<T> {
+        public fun <T> okgoPost(params: String, url: String, t: TypeReference<*>): Observable<T> {
             return OkGo.post<T>(url)
-                    .params("p", params)
+                    .params("p",params)
                     .converter(ResultConvert<T>(t))
                     .adapt(ObservableBody<T>())
 

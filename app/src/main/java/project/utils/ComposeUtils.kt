@@ -12,7 +12,7 @@ class ComposeUtils {
 
 
     companion object {
-        public fun <T> ComposeUtil( mIBaseView: IBaseView): ObservableTransformer<ResultEntity<T>, T> {
+        public fun <T> ComposeUtil( mIBaseView: IBaseView): ObservableTransformer<T, T> {
             return ObservableTransformer { upstream ->
                 upstream
                         .filter {
@@ -24,9 +24,6 @@ class ComposeUtils {
                         }
                         .doOnSubscribe { mIBaseView.showLoading() }
                         .subscribeOn(AndroidSchedulers.mainThread())
-                        .flatMap { tResultEntity ->
-                            Observable.just(tResultEntity.data!!)
-                        }
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .doFinally { mIBaseView.hideLoading() }

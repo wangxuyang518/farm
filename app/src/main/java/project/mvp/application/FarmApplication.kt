@@ -35,9 +35,9 @@ public class FarmApplication : Application() {
 
     fun initOkgo() {
         val builder = OkHttpClient.Builder()
-        builder.readTimeout(5000, TimeUnit.MILLISECONDS)
-        builder.writeTimeout(5000, TimeUnit.MILLISECONDS)
-        builder.connectTimeout(5000, TimeUnit.MILLISECONDS)
+        builder.readTimeout(15000, TimeUnit.MILLISECONDS)
+        builder.writeTimeout(10500, TimeUnit.MILLISECONDS)
+        builder.connectTimeout(15000, TimeUnit.MILLISECONDS)
         OkGo.getInstance().init(this)
                 .setOkHttpClient(builder.build())
                 .setCacheMode(CacheMode.NO_CACHE)

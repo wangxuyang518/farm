@@ -2,6 +2,11 @@ package project.mvp.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.StringUtils;
+import com.blankj.utilcode.util.ToastUtils;
 
 import javax.inject.Inject;
 
@@ -28,6 +33,8 @@ public abstract class BaseMvpActivity<T extends RxPresenter> extends BaseActivit
         super.onCreate(savedInstanceState);
     }
 
+    public abstract void inject();
+
     public ActivityComponent getDaggerActivityComponent() {
         return DaggerActivityComponent.builder()
                 .applicationComponent(FarmApplication.mFarmApplication.mApplicationComponent)
@@ -35,9 +42,17 @@ public abstract class BaseMvpActivity<T extends RxPresenter> extends BaseActivit
                 .build();
     }
 
-
-    public abstract void inject();
-
+    //检测数据是否为null
+     public boolean checkViews(TextView...views){
+         for (TextView tv:views
+              ) {
+             if (StringUtils.isEmpty(tv.getText().toString())){
+                 ToastUtils.showShort("请输入"+tv.getHint());
+                 return false;
+             }
+         }
+        return true;
+     }
 
     @Override
     protected void onDestroy() {

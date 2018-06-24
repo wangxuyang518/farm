@@ -17,4 +17,7 @@ public interface IBaseView {
     void showEmptyView();
 
     void hideLoading();
+
+    void handleException(Throwable throwable);
+
 }

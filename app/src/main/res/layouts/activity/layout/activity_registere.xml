@@ -4,7 +4,8 @@
     android:background="@mipmap/login_bg">
 
     <ImageView
-        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivBack"
+        android:src="@mipmap/icon_back"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -39,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/login_ionc7" />
             <EditText
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/icon3"
@@ -72,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/login_icon3" />
             <EditText
+                android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/icon4"
@@ -80,6 +83,7 @@
                 android:layout_toRightOf="@id/icon4"
                 android:background="@null"
                 android:hint="手机号"
+                android:inputType="phone"
                 android:singleLine="true"
                 android:textSize="16dp" />
             <View
@@ -104,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/login_icon4" />
             <EditText
+                android:id="@+id/etPassWord"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/icon5"
@@ -148,6 +153,7 @@
                 android:textColor="#92DC98"
                 android:textSize="14dp" />
             <EditText
+                android:id="@+id/etMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/icon6"
@@ -158,6 +164,7 @@
                 android:background="@null"
                 android:hint="验证码"
                 android:singleLine="true"
+                android:inputType="number"
                 android:textSize="16dp" />
             <View
                 android:layout_width="match_parent"
@@ -167,9 +174,9 @@
                 android:background="@color/divide_line" />
         </RelativeLayout>
         <Button
-            android:id="@+id/bt_login"
+            android:id="@+id/btLogin"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/mRelativeLayout3"
             android:layout_marginTop="25dp"
             android:background="@drawable/login_bt_bg"

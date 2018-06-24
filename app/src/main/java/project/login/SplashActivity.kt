@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit
 
 
 public class  SplashActivity : BaseActivity(){
+
     override fun getLayoutResource(): Int {
+        setStateBar(resources.getColor(R.color.colorAccent))
        return R.layout.activity_splash
     }
 

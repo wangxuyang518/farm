@@ -2,10 +2,13 @@ package project.login
 
 import android.graphics.Color
 import com.blankj.utilcode.util.ActivityUtils
+import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.activity_login.*
+
 import project.farm.R
 import project.login.presenter.LoginPresenter
 import project.mvp.base.BaseMvpActivity
+import java.util.concurrent.TimeUnit
 
 public class LoginMessageActivity : BaseMvpActivity<LoginPresenter>(){
 
@@ -28,7 +31,17 @@ public class LoginMessageActivity : BaseMvpActivity<LoginPresenter>(){
         tvForgetPassWord.setOnClickListener {
             ActivityUtils.startActivity(FindPassWordActivity::class.java)
         }
-        mPresenter.countdown(tvMessage);
+        mPresenter.countdown(tvMessage, etPhone)//获取短信验证码
+
+        //登录
+        RxView.clicks(btLogin)
+                .throttleFirst(500,TimeUnit.MICROSECONDS)
+                .subscribe {
+                    if (checkViews(etPhone,etMessage)) {
+                        mPresenter.loginMessage(this,etPhone.text,etMessage.text)
+                    }
+                }
+
     }
 
 }

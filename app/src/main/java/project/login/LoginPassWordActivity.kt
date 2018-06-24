@@ -1,27 +1,25 @@
 package project.login
 
 import android.graphics.Color
+import android.text.InputType
+import android.text.InputType.TYPE_CLASS_TEXT
+import android.view.MotionEvent
 import com.blankj.utilcode.util.ActivityUtils
-import com.blankj.utilcode.util.StringUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.activity_login_password.*
 
+
 import project.farm.R
-import project.login.interfaces.ICheckData
 import project.login.presenter.LoginPresenter
 import project.mvp.base.BaseMvpActivity
+import project.mvp.base.IBaseView
+import java.util.concurrent.TimeUnit
 
 
-public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(), ICheckData {
+public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(){
 
 
-    override fun checkInput(): Boolean {
-        if (StringUtils.isEmpty(etPassWord.text) || StringUtils.isEmpty(etPhoneNumber.text)) {
-            ToastUtils.showShort("请检查输入格式")
-            return false
-        }
-        return true
-    }
 
     override fun inject() {
         getDaggerActivityComponent().inject(this)
@@ -34,10 +32,13 @@ public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(), ICheckDa
 
     override fun initView() {
         etPhoneNumber.requestFocus()
-        btLogin.setOnClickListener {
-           // ActivityUtils.startActivity(MainActivity::class.java)
-            mPresenter.getData()
-        }
+        RxView.clicks(btLogin)
+                .throttleFirst(500, TimeUnit.MILLISECONDS)
+                .subscribe {
+                    if (checkViews(etPhoneNumber,etPassWord!!)){
+                        mPresenter.login(this,etPhoneNumber.text,etPassWord.text)
+                    }
+                }
         tvRegister.setOnClickListener {
             ActivityUtils.startActivity(RegisterActivity::class.java)
         }
@@ -47,10 +48,17 @@ public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(), ICheckDa
         tvLoginMessage.setOnClickListener {
             ActivityUtils.startActivity(LoginMessageActivity::class.java)
         }
-        ivPassWord.setOnClickListener {
-            ToastUtils.showShort("查看密码")
+
+
+        ivPassWord!!.setOnTouchListener { view, motionEvent ->
+            if (motionEvent.action == MotionEvent.ACTION_DOWN) {
+                etPassWord.inputType=InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else if (motionEvent.action == MotionEvent.ACTION_UP) {
+                etPassWord.inputType=InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            etPassWord.setSelection(etPassWord.text.length)
+            true
         }
     }
-
 
 }

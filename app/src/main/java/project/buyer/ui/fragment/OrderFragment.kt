@@ -6,6 +6,10 @@ import project.login.presenter.LoginPresenter
 import project.mvp.base.BaseMvpFragment
 
 public class OrderFragment : BaseMvpFragment<LoginPresenter>(){
+    override fun handleException(throwable: Throwable?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun initView() {
 
     }

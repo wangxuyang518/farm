@@ -52,6 +52,7 @@
                 android:textSize="@dimen/login_message_size" />
 
             <EditText
+                android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/icon3"
@@ -87,6 +88,7 @@
                 android:src="@mipmap/login_icon6" />
 
             <EditText
+                android:id="@+id/etMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/icon4"
@@ -107,7 +109,7 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/bt_login"
+            android:id="@+id/btLogin"
             android:layout_width="match_parent"
             android:layout_height="@dimen/login_bt_width"
             android:layout_below="@id/mRelativeLayout1"
@@ -121,7 +123,7 @@
             android:id="@+id/tvPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/bt_login"
+            android:layout_below="@id/btLogin"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:gravity="center_horizontal"

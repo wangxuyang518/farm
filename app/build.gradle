@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'  //kapt3插件
 apply plugin: 'kotlin-android-extensions'
-
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -44,8 +43,8 @@ android {
         androidTestImplementation 'com.android.support.test:runner:1.0.2'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
         api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
-        api rootProject.ext.dependencies["okrx"]
-        api rootProject.ext.dependencies["okgo"]
+        api "com.lzy.net:okrx2:2.0.2"
+        api "com.lzy.net:okgo:3.0.4"
         api rootProject.ext.dependencies["rxandroid"]
         api rootProject.ext.dependencies["fastjson"]
         api rootProject.ext.dependencies["glide"]
@@ -56,6 +55,7 @@ android {
         api 'com.google.dagger:dagger-android-support:2.12'
         api 'com.blankj:utilcode:1.17.0'
         api 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+        implementation('org.apache.directory.studio:org.apache.commons.codec:1.8')
     }
 
 }

@@ -1,89 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#ffffff"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-        <RelativeLayout
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="@dimen/guide_bt_width"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_height="@dimen/guide_bt_width" />
-            <Button
-                android:id="@+id/btSeller"
-                android:text="我是卖家"
-                android:textColor="#ffffff"
-                android:textSize="17dp"
-                android:background="@drawable/guide_bt"
-                android:layout_marginTop="15dp"
-                android:layout_below="@id/image1"
-                android:layout_alignRight="@id/image1"
-                android:layout_alignLeft="@id/image1"
-                android:layout_width="@dimen/guide_bt_width"
-                android:layout_height="40dp" />
-        </RelativeLayout>
-    </RelativeLayout>
+    <include layout="@layout/activity_title_head"/>
     <LinearLayout
-        android:orientation="horizontal"
+        android:background="@mipmap/guide_bg"
+        android:elevation="10dp"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_gravity="center_vertical"
-        android:layout_height="wrap_content"
-        tools:ignore="Suspicious0dp">
-        <View
-            android:background="@color/divide_line"
-            android:layout_width="0dp"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:layout_height="0.8dp"/>
-        <TextView
-            android:textSize="16dp"
-            android:textColor="@color/divide_line"
-            android:text="   或者   "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <View
-            android:layout_gravity="center_vertical"
-            android:background="@color/divide_line"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="0.8dp"/>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent">
         <RelativeLayout
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="@dimen/guide_bt_width"
-                android:layout_height="@dimen/guide_bt_width"
-                android:src="@mipmap/ic_launcher_round" />
-            <Button
-                android:id="@+id/btBuyer"
-                android:layout_marginTop="15dp"
-                android:layout_below="@id/image2"
-                android:layout_alignRight="@id/image2"
-                android:textSize="17dp"
-                android:text="我是买家"
-                android:textColor="#ffffff"
-                android:background="@drawable/guide_bt"
-                android:layout_alignLeft="@id/image2"
-                android:layout_width="@dimen/guide_bt_width"
-                android:layout_height="40dp"  />
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:background="@mipmap/guide_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image1"
+                    android:scaleType="fitCenter"
+                    android:layout_width="@dimen/guide_bt_width"
+                    android:src="@mipmap/guide_role_buyer"
+                    android:layout_height="@dimen/guide_bt_width" />
+                <Button
+                    android:id="@+id/btSeller"
+                    android:elevation="5dp"
+                    android:text="我是买家"
+                    android:textColor="#ffffff"
+                    android:textSize="17dp"
+                    android:background="@drawable/guide_bt"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/image1"
+                    android:layout_alignRight="@id/image1"
+                    android:layout_alignLeft="@id/image1"
+                    android:layout_width="@dimen/guide_bt_width"
+                    android:minHeight="43dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
         </RelativeLayout>
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            tools:ignore="Suspicious0dp">
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_height="0.8dp"/>
+            <TextView
+                android:textSize="17dp"
+                android:textColor="@color/text_color"
+                android:text="   或者   "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorAccent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="0.8dp"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:scaleType="fitCenter"
+                    android:id="@+id/image2"
+                    android:layout_width="@dimen/guide_bt_width"
+                    android:layout_height="@dimen/guide_bt_width"
+                    android:src="@mipmap/guide_role_seller" />
+                <Button
+                    android:elevation="5dp"
+                    android:id="@+id/btBuyer"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@id/image2"
+                    android:layout_alignRight="@id/image2"
+                    android:textSize="17dp"
+                    android:text="我是卖家"
+                    android:textColor="#ffffff"
+                    android:minHeight="43dp"
+                    android:background="@drawable/guide_bt1"
+                    android:layout_alignLeft="@id/image2"
+                    android:layout_width="@dimen/guide_bt_width"
+                    android:layout_height="wrap_content"  />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
 </LinearLayout>

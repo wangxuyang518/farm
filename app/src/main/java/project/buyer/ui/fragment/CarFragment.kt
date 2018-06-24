@@ -6,6 +6,10 @@ import project.login.presenter.LoginPresenter
 import project.mvp.base.BaseMvpFragment
 
 public class CarFragment : BaseMvpFragment<LoginPresenter>(){
+    override fun handleException(throwable: Throwable?) {
+
+    }
+
     override fun initView() {
 
     }

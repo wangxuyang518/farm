@@ -1,17 +1,23 @@
 package project.login.presenter
 
-import android.widget.TextView
+import android.content.Intent
 import com.alibaba.fastjson.TypeReference
-import com.jakewharton.rxbinding2.view.RxView
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
+import com.blankj.utilcode.util.ActivityUtils
+import com.blankj.utilcode.util.SPUtils
+
+import io.reactivex.functions.Consumer
+import project.farm.R
+import project.login.LoginMessageActivity
+import project.login.LoginPassWordActivity
+import project.login.MainActivity
+import project.login.RegisterActivity
+
 import project.mvp.base.IBaseView
 import project.mvp.base.RxPresenter
 import project.mvp.http.Api
 import project.mvp.repertory.BaseRepertory
-import java.util.concurrent.TimeUnit
+import project.utils.ComposeUtils
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -19,44 +25,37 @@ import javax.inject.Inject
  */
 public class LoginPresenter @Inject constructor() : RxPresenter<IBaseView>() {
 
-    private var mDisable: Disposable? = null
 
-    //倒计时
-    public fun countdown(tvMessage: TextView) {
-        addSubscribe(RxView.clicks(tvMessage)
-                .throttleFirst(60, TimeUnit.SECONDS)
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe {
-                    tvMessage.isClickable = false
-                    mDisable = Observable
-                            .interval(1, TimeUnit.SECONDS)
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe {
-                                if (it.toInt() == 60) {
-                                    tvMessage.setText("获取验证码")
-                                    tvMessage.isClickable = true
-                                    mDisable!!.dispose()
-                                } else {
-                                    tvMessage.setText("剩余" + (60 - it.toInt()) + "秒");
-                                }
-                            }
-                    addSubscribe(mDisable)
-                })
+    //密码
+    public fun login(activity: LoginPassWordActivity,vararg  string: CharSequence) {
+        var s = HashMap<String, Any>();
+        s.put("userCode", string[0])
+        s.put("passWord",string[1])
+        BaseRepertory.okgoPost<String>(aesEncode(s), Api.loginUrl, object : TypeReference<String>() {})
+                .compose(ComposeUtils.ComposeUtil(mView))
+                .subscribe(object : Consumer<String> {
+                    override fun accept(t: String) {
+                        SPUtils.getInstance().put("token", t);
+                        activity.startActivity(Intent(activity,MainActivity::class.java))
+                        activity.finish()
+                    }
+                },error)
     }
 
-
-    public fun getData() {
+    //验证码登录
+    public fun loginMessage(activity:LoginMessageActivity ,vararg  string: CharSequence){
         var s = HashMap<String, Any>();
-        s.put("userCode", "123")
-        s.put("passWord ", "123")
-        s.put("requestToken", "1231231231231212312312123")
-        BaseRepertory.okgoPost(encode(s),Api.loginUrl, object : TypeReference<String>() {})
-              /*  .compose(ComposeUtils.ComposeUtil(mView))
-                .subscribe {
-
-                }*/
-
-
+        s.put("userCode", string[0])
+        s.put("code",string[1])
+        BaseRepertory.okgoPost<String>(aesEncode(s), Api.codeUrl, object : TypeReference<String>() {})
+                .compose(ComposeUtils.ComposeUtil(mView))
+                .subscribe(object : Consumer<String> {
+                    override fun accept(t: String) {
+                        SPUtils.getInstance().put("token", t);
+                        activity.startActivity(Intent(activity,MainActivity::class.java))
+                        activity.finish()
+                    }
+                },error)
     }
 }
+
