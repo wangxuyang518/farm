@@ -3,7 +3,6 @@ package project.mvp.base;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.blankj.utilcode.util.StringUtils;
@@ -22,8 +21,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 import project.helper.EncryptHelper;
-
-import project.mvp.application.Constant;
 import project.mvp.http.Api;
 import project.mvp.repertory.BaseRepertory;
 import project.utils.ComposeUtils;
@@ -90,7 +87,7 @@ public class RxPresenter<T extends IBaseView> implements IBasePresenter{
                     public void accept(String s) throws Exception {
                         ToastUtils.showShort("验证码获取成功");
                     }
-                });
+                },error);
     }
 
     //获取短信验证码信息

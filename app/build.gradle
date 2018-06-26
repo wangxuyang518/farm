@@ -12,6 +12,10 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
     buildTypes {
         release {
@@ -46,8 +50,6 @@ android {
         api "com.lzy.net:okrx2:2.0.2"
         api "com.lzy.net:okgo:3.0.4"
         api rootProject.ext.dependencies["rxandroid"]
-        api rootProject.ext.dependencies["fastjson"]
-        api rootProject.ext.dependencies["glide"]
         api rootProject.ext.dependencies["banner"]
         api 'com.google.dagger:dagger:2.12'
         kapt "com.google.dagger:dagger-compiler:2.12"
@@ -55,7 +57,10 @@ android {
         api 'com.google.dagger:dagger-android-support:2.12'
         api 'com.blankj:utilcode:1.17.0'
         api 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-        implementation('org.apache.directory.studio:org.apache.commons.codec:1.8')
+        implementation 'com.tencent.bugly:crashreport:latest.release'
+        implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+        implementation project(':imagepicker1')
     }
 
 }
+

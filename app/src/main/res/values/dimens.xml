@@ -21,6 +21,13 @@
     <dimen name="login_icon_width">20dp</dimen>
     <dimen name="login_icon_height">30dp</dimen>
     <dimen name="main_head_icon_height">25dp</dimen>
-
-
+    <dimen name="publish_text_size">17dp</dimen>
+    <dimen name="publish_item_height">50dp</dimen>
+    <dimen name="publish_icon_height">27dp</dimen>
+    <dimen name="publish_icon_padding">3.5dp</dimen>
+    <dimen name="publish_icon_text_height">30dp</dimen>
+    <dimen name="mine_item_height">50dp</dimen>
+    <dimen name="mine_item_text_size">17dp</dimen>
+    <dimen name="mine_item_icon_size">22dp</dimen>
+    <dimen name="mine_line_height">0.8dp</dimen>
 </resources>

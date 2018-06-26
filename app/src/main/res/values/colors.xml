@@ -3,7 +3,8 @@
     <color name="colorPrimary">#48C952</color>
     <color name="colorPrimaryDark">#48C952</color>
     <color name="colorAccent">#48C952</color>
-    <color name="divide_line">#EDEDED</color>
+    <color name="divide_line">#EEEEEE</color>
+
     <color name="white">#ffffff</color>
     <color name="guide_bt_color">#6CDC60</color>
     <color name="login_bg_color">#3CF2AB</color>

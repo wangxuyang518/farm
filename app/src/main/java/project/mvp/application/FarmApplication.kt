@@ -6,6 +6,7 @@ import com.lzy.okgo.OkGo
 import com.lzy.okgo.cache.CacheEntity
 import com.lzy.okgo.cache.CacheMode
 import com.lzy.okgo.model.HttpHeaders
+import com.tencent.bugly.Bugly
 import okhttp3.OkHttpClient
 import xinyi.com.appmanager.di.component.ApplicationComponent
 import xinyi.com.appmanager.di.component.DaggerApplicationComponent
@@ -24,6 +25,7 @@ public class FarmApplication : Application() {
         Utils.init(this)
         initDagger2()
         initOkgo()
+        Bugly.init(this,"66c9887bc6",true);
     }
 
     fun initDagger2() {

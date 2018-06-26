@@ -35,11 +35,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="project.login.SplashActivity"
-            android:label="@string/app_name"
-            android:theme="@style/SplashTheme">
+            android:name="project.login.MainActivity"
+            android:label="@string/app_name">
+       <!--     android:theme="@style/SplashTheme"-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -49,7 +50,7 @@
         <activity android:name="project.login.RegisterActivity"/>
         <activity android:name="project.login.GuideActivity" />
         <activity android:name="project.login.LoginMessageActivity" />
-        <activity android:name="project.login.MainActivity" />
+        <!--<activity android:name="project.login.MainActivity" />-->
         <activity android:name="project.login.FindPassWordActivity"/>
     </application>
 

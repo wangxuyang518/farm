@@ -2,11 +2,11 @@ package xinyi.com.appmanager.di.component;
 
 
 import dagger.Component
-import project.buyer.ui.fragment.CarFragment
-import project.buyer.ui.fragment.HomeFragment
-import project.buyer.ui.fragment.MineFragment
-import project.buyer.ui.fragment.OrderFragment
 import project.mvp.base.BaseMvpFragment
+import project.seller.ui.fragment.HomeFragment
+import project.seller.ui.fragment.MineFragment
+import project.seller.ui.fragment.OrderFragment
+import project.seller.ui.fragment.PulishFragment
 import xinyi.com.appmanager.di.module.FragmentModule
 import xinyi.com.appmanager.di.scope.FragmentScope
 
@@ -21,7 +21,7 @@ interface FragmentComponent {
     val activity: BaseMvpFragment<*>
 
     fun inject(mHomeFragment: HomeFragment);
-    fun inject(mPublishFragment: CarFragment);
+    fun inject(mPublishFragment: PulishFragment);
     fun inject(mOrderFragment: OrderFragment);
     fun inject(mMineFragment: MineFragment);
 }

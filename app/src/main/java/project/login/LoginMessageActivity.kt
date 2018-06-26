@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 import project.farm.R
 import project.login.presenter.LoginPresenter
+import project.mvp.application.Constant
 import project.mvp.base.BaseMvpActivity
 import java.util.concurrent.TimeUnit
 
@@ -35,7 +36,7 @@ public class LoginMessageActivity : BaseMvpActivity<LoginPresenter>(){
 
         //登录
         RxView.clicks(btLogin)
-                .throttleFirst(500,TimeUnit.MICROSECONDS)
+                .throttleFirst(Constant.DURATION,TimeUnit.MICROSECONDS)
                 .subscribe {
                     if (checkViews(etPhone,etMessage)) {
                         mPresenter.loginMessage(this,etPhone.text,etMessage.text)

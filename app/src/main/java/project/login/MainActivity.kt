@@ -2,6 +2,7 @@ package project.login
 
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.support.design.internal.BottomNavigationItemView
@@ -12,12 +13,12 @@ import android.util.Log
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.ToastUtils
 import kotlinx.android.synthetic.main.activity_main.*
-import project.buyer.ui.fragment.CarFragment
-import project.buyer.ui.fragment.HomeFragment
-import project.buyer.ui.fragment.MineFragment
-import project.buyer.ui.fragment.OrderFragment
 import project.farm.R
 import project.mvp.base.BaseActivity
+import project.seller.ui.fragment.HomeFragment
+import project.seller.ui.fragment.MineFragment
+import project.seller.ui.fragment.OrderFragment
+import project.seller.ui.fragment.PulishFragment
 
 
 class MainActivity : BaseActivity() {
@@ -53,7 +54,7 @@ class MainActivity : BaseActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_publish -> {
-                mFragmentTransaction.replace(R.id.mFrameLayout, CarFragment(), "pulish")
+                mFragmentTransaction.replace(R.id.mFrameLayout, PulishFragment(), "pulish")
                 mFragmentTransaction.commit()
                 return@OnNavigationItemSelectedListener true
             }
@@ -106,4 +107,11 @@ class MainActivity : BaseActivity() {
     }
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        var  f=supportFragmentManager.findFragmentByTag("pulish")
+        if (f!=null){
+            f.onActivityResult(requestCode , resultCode , data )
+        }
+    }
 }

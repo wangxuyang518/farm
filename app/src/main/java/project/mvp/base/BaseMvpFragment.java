@@ -65,4 +65,9 @@ public abstract class BaseMvpFragment <T extends RxPresenter>extends BaseFragmen
         super.onDestroyView();
         mPresenter.detachView();
     }
+
+    @Override
+    public void handleException(Throwable throwable) {
+
+    }
 }

@@ -1,16 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/mFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+        <project.widget.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            app:arcHeight="26dp"
+            app:bgColor="@color/colorAccent"
+            />
+        <ImageView
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我的"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="273dp"
-        tools:ignore="MissingConstraints" />
-</android.support.constraint.ConstraintLayout>
+            android:src="@mipmap/mine_bg"
+            android:layout_width="match_parent"
+            android:layout_height="140dp" />
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivUser"
+                android:src="@mipmap/mine_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/ivUser"
+                android:id="@+id/tvName"
+                android:layout_alignTop="@id/ivUser"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:text="王思聪"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_below="@id/tvName"
+                android:layout_marginTop="4dp"
+                android:layout_alignLeft="@id/tvName"
+                android:layout_toRightOf="@id/ivUser"
+                android:id="@+id/tvPhone"
+                android:text="1882752012"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_toRightOf="@id/tvName"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:text="实名认证"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+
+                android:background="@drawable/mine_identifiy"
+                android:layout_marginLeft="15dp"
+                android:layout_alignBaseline="@id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </FrameLayout>
+    <!--<Button
+        android:id="@+id/btLogin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_bt_width"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="@dimen/login_layout_marginTop25"
+        android:background="@drawable/login_bt_bg"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="17dp" />-->
+<ScrollView
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:background="@drawable/mine_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon1"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_infor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon1"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="账户信息"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon2"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon2"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="我的商品"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon3"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_idetify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon3"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="实名认证"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon4"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_purse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon4"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="我的钱包"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon5"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon5"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="在线客服"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon6"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon6"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="关于我们"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+            <RelativeLayout
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_item_height">
+                <ImageView
+                    android:id="@+id/mine_icon7"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_icon_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@id/mine_icon7"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/mine_item_text_size"
+                    android:text="预览我的主页"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@mipmap/publish_icon2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/mine_item_icon_size"
+                    android:layout_height="@dimen/mine_item_icon_size" />
+            </RelativeLayout>
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_line_height"/>
+
+            <Button
+                android:id="@+id/btLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_bt_width"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/login_bt_bg"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

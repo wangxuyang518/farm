@@ -3,13 +3,16 @@ package project.login
 import android.graphics.Color
 import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.activity_findpassword.*
-
 import project.farm.R
-import project.login.presenter.LoginPresenter
+import project.login.presenter.FindBackPresenter
+import project.mvp.application.Constant
 import project.mvp.base.BaseMvpActivity
 import java.util.concurrent.TimeUnit
 
-public class FindPassWordActivity : BaseMvpActivity<LoginPresenter>() {
+/**
+ * 找回密码
+ */
+public class FindPassWordActivity : BaseMvpActivity<FindBackPresenter>() {
 
 
     override fun inject() {
@@ -22,11 +25,18 @@ public class FindPassWordActivity : BaseMvpActivity<LoginPresenter>() {
     }
 
     override fun initView() {
+       mPresenter.countdown(tvMessage,etPhone)
        RxView.clicks(ivBack)
-               .throttleFirst(500,TimeUnit.MICROSECONDS)
+               .throttleFirst(Constant.DURATION,TimeUnit.MICROSECONDS)
                .subscribe {
                    finish()
                }
+
+        RxView.clicks(btSubmit)
+                .throttleFirst(Constant.DURATION,TimeUnit.MICROSECONDS)
+                .subscribe {
+                    mPresenter.setNewPassWord(this,etPhone.text,etMessage.text,etPhone.text)
+                }
     }
 
 }

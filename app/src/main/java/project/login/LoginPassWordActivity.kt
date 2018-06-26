@@ -1,19 +1,16 @@
 package project.login
 
+
 import android.graphics.Color
 import android.text.InputType
-import android.text.InputType.TYPE_CLASS_TEXT
 import android.view.MotionEvent
 import com.blankj.utilcode.util.ActivityUtils
-import com.blankj.utilcode.util.ToastUtils
 import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.activity_login_password.*
-
-
 import project.farm.R
 import project.login.presenter.LoginPresenter
+import project.mvp.application.Constant
 import project.mvp.base.BaseMvpActivity
-import project.mvp.base.IBaseView
 import java.util.concurrent.TimeUnit
 
 
@@ -33,7 +30,7 @@ public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(){
     override fun initView() {
         etPhoneNumber.requestFocus()
         RxView.clicks(btLogin)
-                .throttleFirst(500, TimeUnit.MILLISECONDS)
+                .throttleFirst(Constant.DURATION, TimeUnit.MILLISECONDS)
                 .subscribe {
                     if (checkViews(etPhoneNumber,etPassWord!!)){
                         mPresenter.login(this,etPhoneNumber.text,etPassWord.text)
@@ -47,6 +44,7 @@ public class LoginPassWordActivity : BaseMvpActivity<LoginPresenter>(){
         }
         tvLoginMessage.setOnClickListener {
             ActivityUtils.startActivity(LoginMessageActivity::class.java)
+            finish()
         }
 
 

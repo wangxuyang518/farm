@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_title_head" />
+
+
+    <ScrollView
+        android:fillViewport="true"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/publish_item_height"
+                android:padding="13dp">
+
+                <ImageView
+                    android:id="@+id/icon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_height"
+                    android:paddingTop="@dimen/publish_icon_padding"
+                    android:paddingBottom="@dimen/publish_icon_padding"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/publish_icon1" />
+
+                <TextView
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_text_height"
+                    android:layout_alignBottom="@id/icon1"
+                    android:layout_alignTop="@id/icon1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon1"
+                    android:gravity="center"
+                    android:text="商品名称"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/publish_text_size" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvProductName"
+                    android:background="@null"
+                    android:hint="商品名称"
+                    android:textSize="@dimen/publish_text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#eeeeee" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/publish_item_height"
+                android:padding="13dp">
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_height"
+                    android:paddingTop="@dimen/publish_icon_padding"
+                    android:paddingBottom="@dimen/publish_icon_padding"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/publish_icon1" />
+
+                <TextView
+                    android:id="@+id/tvProductType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_text_height"
+                    android:layout_alignBottom="@id/icon2"
+                    android:layout_alignTop="@id/icon2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon2"
+                    android:gravity="center"
+                    android:text="商品种类"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/publish_text_size" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/publish_icon2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvProductType"
+                    android:background="@null"
+                    android:hint="商品种类"
+                    android:textSize="@dimen/publish_text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#eeeeee" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/publish_item_height"
+                android:padding="13dp">
+
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_height"
+                    android:paddingTop="@dimen/publish_icon_padding"
+                    android:paddingBottom="@dimen/publish_icon_padding"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/publish_icon1" />
+
+                <TextView
+                    android:id="@+id/tvUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_text_height"
+                    android:layout_alignBottom="@id/icon3"
+                    android:layout_alignTop="@id/icon3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon3"
+                    android:gravity="center"
+                    android:text="商品单位"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/publish_text_size" />
+
+                <RadioGroup
+                    android:layout_alignTop="@id/icon3"
+                    android:layout_alignBottom="@id/icon3"
+                    android:id="@+id/mRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/publish_item_height"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvUnit"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbJin"
+                        android:layout_width="45dp"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:textColor="@color/publish_rb_text"
+                        android:background="@drawable/publish_rt_bg"
+                        android:layout_height="match_parent"
+                        android:checked="true"
+                        android:text="斤"
+                        android:textSize="14dp" />
+
+                    <RadioButton
+                        android:id="@+id/rtGe"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:text="个"
+                        android:background="@drawable/publish_rt_bg"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:textColor="@color/publish_rb_text"
+                        android:textSize="14dp"/>
+
+                    <RadioButton
+                        android:id="@+id/rtLiang"
+                        android:layout_width="45dp"
+                        android:textColor="@color/publish_rb_text"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:text="两"
+                        android:background="@drawable/publish_rt_bg"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:textSize="14dp" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#eeeeee" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/publish_item_height"
+                android:padding="13dp">
+
+                <ImageView
+                    android:id="@+id/icon4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_height"
+                    android:paddingTop="@dimen/publish_icon_padding"
+                    android:paddingBottom="@dimen/publish_icon_padding"
+                    android:scaleType="fitXY"
+
+                    android:src="@mipmap/publish_icon1" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/icon4"
+                    android:layout_alignTop="@id/icon4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon4"
+                    android:gravity="center"
+                    android:text="商品价格"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/publish_text_size" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvPrice"
+                    android:background="@null"
+                    android:hint="商品价格"
+                    android:textSize="@dimen/publish_text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#eeeeee" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/publish_item_height"
+                android:padding="13dp">
+
+                <ImageView
+                    android:id="@+id/icon5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_height"
+                    android:paddingTop="@dimen/publish_icon_padding"
+                    android:paddingBottom="@dimen/publish_icon_padding"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/publish_icon1" />
+
+                <TextView
+                    android:id="@+id/tvProductDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/publish_icon_text_height"
+                    android:layout_alignBottom="@id/icon5"
+                    android:layout_alignTop="@id/icon5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon5"
+                    android:gravity="center"
+                    android:text="商品种类"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/publish_text_size" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/publish_icon2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/tvProductDescription"
+                    android:background="@null"
+                    android:hint="商品描述"
+                    android:textSize="@dimen/publish_text_size" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_line_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#eeeeee" />
+
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <xinyi.com.imagepicker.PickImages
+                        android:id="@+id/mPickImages"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:visibility="gone"
+                        app:itemDefaluteImage="@mipmap/add_photo"
+                        app:maxImages="4"
+                        app:numColumns="4" />
+                    <ImageView
+                        android:id="@+id/tips"
+                        android:src="@mipmap/publich_icon4"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvTips"
+                        android:layout_marginTop="13dp"
+                        android:layout_below="@id/tips"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="16dp"
+                        android:text="点击上传商品图片,最多4张"
+                        android:textColor="@color/text_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/btLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/login_bt_width"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="@dimen/login_layout_marginTop25"
+                    android:background="@drawable/login_bt_bg"
+                    android:text="发布"
+                    android:textColor="@color/white"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

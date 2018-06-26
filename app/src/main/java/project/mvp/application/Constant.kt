@@ -13,6 +13,7 @@ class Constant {
         public var CODEFAILURE = 4
         public var SMSSENDFAILURE = 5
         public var ERRORTOKEN = 6
+        public var DURATION=500L;
 
         public var SECRET = "1234567890123456";
 
